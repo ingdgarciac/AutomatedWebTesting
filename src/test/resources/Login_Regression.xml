@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Login Regression tests">
+    <listeners>
+        <listener class-name="com.automation.core.base.Listener"/>
+    </listeners>
+    <!--Browser test (Chrome, Firefox, Edge, Safari)-->
+    <parameter name="browser" value="Chrome"/>
+    <test name="Login tests">
+        <parameter name="url" value="https://www.saucedemo.com"/>
+        <classes>
+            <class name="com.automation.login.LoginTest"/>
+        </classes>
+    </test>
+</suite>
