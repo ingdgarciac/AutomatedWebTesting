@@ -2,8 +2,7 @@ package com.automation.login;
 
 import static com.automation.enums.ErrorMessage.LOCKED_ERROR;
 import static com.automation.enums.ErrorMessage.WRONG_USER;
-import static com.automation.enums.User.LOCKED;
-import static com.automation.enums.User.WRONG;
+import static com.automation.enums.User.*;
 import static io.qameta.allure.SeverityLevel.BLOCKER;
 import static org.hamcrest.Matchers.is;
 
@@ -58,7 +57,7 @@ public class LoginTest extends LoginBaseTest {
   @TmsLink("CA-25939")
   @Description("Validate login with wrong user")
   public void validateLoginWithStandardUser() {
-    inventoryPage = loginPage.setUsername(WRONG).setPassword(WRONG).clickOnLoginButton(true);
+    inventoryPage = loginPage.setUsername(STANDARD).setPassword(STANDARD).clickOnLoginButton(true);
 
     checkThat.hardAssert("Inventory page is displayed", inventoryPage.isPageLoaded(), is(true));
     checkThat.softAssert("Hamburger menzu", inventoryPage.isHamburgerMenuVisible(), is(true));
